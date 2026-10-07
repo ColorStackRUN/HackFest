@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HackFest 2026 · Building Newark</title>
+  <meta name="description" content="HackFest 2026 at Rutgers–Newark. Students building tech that builds up the city. No experience needed.">
+
+  <!-- Fonts (section 3 of the design language) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@1&family=Inter:wght@400;500&family=Space+Grotesk:wght@700&family=Space+Mono&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- ========== HEADER ========== -->
+  <header class="site-header">
+    <div class="container">
+      <a class="wordmark" href="#top">
+        HackFest 2026
+        <small>gwc x csrun</small>
+      </a>
+      <nav class="nav" aria-label="Main">
+        <a href="#about">About</a>
+        <a href="#schedule">Schedule</a>
+        <a href="#sponsors">Sponsors</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <a class="btn btn-primary" href="#register">Register</a>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- ========== HERO (Soot, red moment) ========== -->
+    <section class="hero">
+      <!-- Signature motif: hairline brick grid, a few bricks filled in Brick City Red -->
+      <svg class="brick-grid" aria-hidden="true" preserveAspectRatio="xMaxYMin slice" viewBox="0 0 1200 600">
+        <defs>
+          <pattern id="bricks" width="80" height="40" patternUnits="userSpaceOnUse">
+            <path d="M0 0H80M0 20H80M0 0V20M40 20V40" fill="none" stroke="#2B2D31" stroke-width="1"/>
+          </pattern>
+        </defs>
+        <rect width="1200" height="600" fill="url(#bricks)"/>
+        <rect x="880" y="80"  width="40" height="20" fill="#A3302A"/>
+        <rect x="960" y="120" width="40" height="20" fill="#A3302A"/>
+        <rect x="1040" y="60" width="40" height="20" fill="#A3302A"/>
+        <rect x="1000" y="180" width="40" height="20" fill="#5E1A17"/>
+      </svg>
+
+      <div class="container hero-content">
+        <span class="date">// dates tba · rutgers–newark</span>
+        <h1>Building <span class="accent">Newark</span></h1>
+        <p class="lede">Brick by brick, byte by byte. Build something for your city with students who are doing the same. No experience needed.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#register">Register</a>
+          <a class="btn btn-ghost" href="#about">Learn more</a>
+        </div>
+      </div>
+
+      <!-- Flat skyline silhouette with smokestacks (placeholder — swap for final art) -->
+      <svg class="skyline" aria-hidden="true" viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <path fill="currentColor" d="M0 120V90h60V60h40v30h30V40h20V20h10v20h20v50h40V70h60v50h20V30h12V10h8v20h12v90h40V50h50v40h30V65h45v55h25V25h10V5h6v20h10v95h40V80h70V55h30v65h35V45h45v75h30V75h55V35h15V15h8v20h12v85h40V60h60v60H0z"/>
+      </svg>
+    </section>
+
+    <!-- ========== ABOUT (Limestone) ========== -->
+    <section class="section section--light" id="about">
+      <div class="container">
+        <span class="label">// 01 / about</span>
+        <h2>You belong <span class="accent">here</span></h2>
+        <p style="max-width:60ch">HackFest is a weekend for building tech that helps Newark. Come solo or bring a team. First hackathon? Good. We'll get you set up.</p>
+
+        <div class="grid-3">
+          <div class="card">
+            <span class="label">// build</span>
+            <h3>Make something real</h3>
+            <p>Pick a problem in your city and build a working answer in one weekend.</p>
+          </div>
+          <div class="card">
+            <span class="label">// learn</span>
+            <h3>Start from zero</h3>
+            <p>Workshops and mentors walk you through it. You don't need to know how to code yet.</p>
+          </div>
+          <div class="card">
+            <span class="label">// meet</span>
+            <h3>Find your people</h3>
+            <p>Meet students, sponsors, and builders from across Rutgers–Newark.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== SCHEDULE (Soot, brass moment) ========== -->
+    <section class="section section--dark" id="schedule">
+      <div class="container">
+        <span class="label">// 02 / schedule</span>
+        <hr class="rule-brass">
+        <h2>The weekend</h2>
+        <!-- Event dates are not final yet. Update from the Marketing Tracker before launch. -->
+        <ul class="schedule">
+          <li><span class="when">day 1 · tba</span><span>Check-in, opening, team formation</span></li>
+          <li><span class="when">day 1 · tba</span><span>Hacking starts. Workshops all afternoon</span></li>
+          <li><span class="when">day 2 · tba</span><span>Mentor rounds and demos</span></li>
+          <li><span class="when">day 2 · tba</span><span>Judging, winners, closing</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ========== SPONSORS (Limestone) ========== -->
+    <section class="section section--light" id="sponsors">
+      <div class="container">
+        <span class="label">// 03 / sponsors</span>
+        <h2>Who's building with us</h2>
+        <p>Sponsor logos go here in their original colors. Never recolor a sponsor logo.</p>
+        <div class="sponsors">
+          <div class="sponsor-slot">logo</div>
+          <div class="sponsor-slot">logo</div>
+          <div class="sponsor-slot">logo</div>
+          <div class="sponsor-slot">logo</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== FAQ (Limestone) ========== -->
+    <section class="section section--light" id="faq" style="padding-top:0">
+      <div class="container">
+        <span class="label">// 04 / faq</span>
+        <h2>Questions</h2>
+        <details>
+          <summary>Do I need coding experience?</summary>
+          <p>No. Beginners are welcome, and we'll have workshops and mentors to help.</p>
+        </details>
+        <details>
+          <summary>Who can join?</summary>
+          <p>Students. Add the exact eligibility rules here.</p>
+        </details>
+        <details>
+          <summary>Does it cost anything?</summary>
+          <p>Add the answer here.</p>
+        </details>
+      </div>
+    </section>
+
+    <!-- ========== REGISTER BAND ========== -->
+    <section class="register-band" id="register">
+      <div class="container">
+        <h2>Build something for your city</h2>
+        <p>Registration opens Sep 21.</p>
+        <a class="btn" href="#">Register</a> <!-- TODO: paste the registration form link -->
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="site-footer">
+    <div class="container">
+      <span>HackFest 2026 · GWC x CSRUN · Rutgers–Newark</span>
+      <span>#HackFest2026 #BuildingNewark</span>
+    </div>
+  </footer>
+
+</body>
+</html>

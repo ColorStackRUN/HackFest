@@ -1,0 +1,42 @@
+/* ==========================================================
+   HackFest 2026 — Design Tokens
+   Source of truth: "HackFest 2026 Design Language" sheet.
+   Change values HERE, not inside styles.css.
+   ========================================================== */
+
+:root {
+  /* ---------- 2. Color Palette ---------- */
+  --soot:       #141416; /* Base (dark): hero, reveal, website header */
+  --graphite:   #2B2D31; /* Layer: cards and panels on Soot */
+  --brick-red:  #A3302A; /* Signature: brick motif, Register button, one bold word */
+  --oxblood:    #5E1A17; /* Depth: brick shadows, hover states */
+  --brass:      #D9A441; /* Luxe accent: hairline rules, dates. Text on Soot/Graphite ONLY */
+  --limestone:  #F3F1EC; /* Base (light): features, sponsors, recap, body sections */
+  --steel:      #8A8F96; /* Neutral: skyline, dividers, meta info on dark. Decorative on light */
+  --passaic:    #3B5B78; /* Quiet secondary: track labels, icons, links. Use sparingly */
+
+  /* Mix target: ~70% Soot/Graphite or Limestone, ~20% Brick + Oxblood,
+     ~5% Passaic Blue, ~5% Brass. One accent per section: red OR brass. */
+
+  /* ---------- 3. Typography (Google Fonts) ---------- */
+  --font-display: "Space Grotesk", system-ui, sans-serif; /* Bold, Title Case / ALL CAPS */
+  --font-accent:  "DM Serif Display", Georgia, serif;     /* Italic, ONE word per design */
+  --font-body:    "Inter", system-ui, sans-serif;         /* Regular / Medium */
+  --font-mono:    "Space Mono", ui-monospace, monospace;  /* lowercase tech labels */
+
+  --tracking-display: -0.03em; /* tight: -2 to -3% */
+  --tracking-mono: 0.12em;     /* wide spacing */
+
+  /* ---------- Spacing & layout ---------- */
+  --space-1: 0.5rem;
+  --space-2: 1rem;
+  --space-3: 1.5rem;
+  --space-4: 2.5rem;
+  --space-5: 4rem;
+  --space-6: 7rem;  /* "generous space" */
+  --max-width: 1200px;
+  --hairline: 1px;
+
+  /* Rules: no gradients, no glows, no drop shadows. */
+  --radius: 0;      /* bricks are square */
+}
