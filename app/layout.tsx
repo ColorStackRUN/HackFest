@@ -1,13 +1,35 @@
 import type { Metadata } from "next";
+import { event } from "../lib/event";
 import "./globals.css";
 
+const siteUrl =
+  process.env.SITE_URL ??
+  (process.env.VERCEL_PROJECT_PRODUCTION_URL
+    ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+    : process.env.VERCEL_URL
+      ? `https://${process.env.VERCEL_URL}`
+      : `http://localhost:${process.env.PORT ?? "3000"}`);
+
 export const metadata: Metadata = {
-  title: "HackFest 2026 · Building Newark",
-  description:
-    "HackFest 2026 at Rutgers–Newark. Students building tech that builds up the city. No experience needed.",
+  metadataBase: new URL(siteUrl),
+  title: `${event.name} · ${event.theme}`,
+  description: event.description,
+  openGraph: {
+    title: `${event.name} · ${event.theme}`,
+    description: event.description,
+    type: "website",
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: event.name,
+    description: event.description,
+  },
 };
 
-export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+export default function RootLayout({
+  children,
+}: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
       <body>{children}</body>
