@@ -200,6 +200,14 @@ Combine short sections where useful. The goal is a page that answers questions, 
 
 ## Launch acceptance checklist
 
+### Local implementation progress
+
+The motion/design pass now adds an editorial split hero with brick-built “HackFest” lettering and a centered “2026”, staggered masonry joints, hover/button replay, a pausable subtle idle bob, illustrated feature cards, an animated connected schedule, a designed venue card, plus/minus FAQ affordances, and a stationary registration frame. Brief outline-brick seams mark section crossings. See `design-plan.md` for the current direction and `design-review.md` for the initial agent agreement. Entrances and rebuilds are finite; the idle bob has an explicit pause control. Content remains visible without enhancement, and reduced-motion preferences are respected.
+
+Implemented: Typeform embed with direct-link fallback; clearer three-day event introduction; shared event facts; expanded FAQs; preliminary Day 1–3 layout; venue information section; removal of sponsor/editorial placeholders and stale registration date; mobile section navigation; skip link, focus styles, anchor offsets, reduced-motion support, stronger light-background label contrast; separate brand tokens; favicon and social image; working lint configuration.
+
+Still awaiting organizer details: confirmed dates, venue addresses and Google Maps pins, eligibility/cost/overnight policies, registration deadline and confirmation process, contacts/social links, code of conduct, sponsors, photos, speakers, and approved challenge tracks. Browser verification does not include submitting the live registration form.
+
 - [ ] A first-time visitor can identify the event, dates, location, eligibility, and cost quickly.
 - [ ] Registration works from every CTA and explains what happens next.
 - [ ] No stale registration date, public editing note, fake statistic, or placeholder logo remains.
