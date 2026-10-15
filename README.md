@@ -14,6 +14,7 @@ hackfest-website/
 │   ├── components/
 │   │   ├── architectural-art.tsx  ← brick mark and schedule stacks
 │   │   ├── brick-city.tsx         ← static decorative brick lettering
+│   │   ├── brick-cursor.tsx       ← skyline and click feedback for the brick cursor
 │   │   └── registration-form.tsx  ← Typeform client component
 │   ├── globals.css                ← layout and responsive styles
 │   ├── layout.tsx                 ← shared document layout and metadata
@@ -21,7 +22,7 @@ hackfest-website/
 │   ├── page.tsx                   ← content-first homepage
 │   └── tokens.css                 ← brand colors and fonts
 ├── public/
-│   └── brick-cursor.svg       ← desktop brick cursor
+│   └── brick-cursor.png           ← desktop brick cursor
 ├── lib/event.ts                   ← shared event facts, schedule, and FAQ
 ├── DESIGN.md                      ← design rules for site changes
 └── README.md                      ← this file

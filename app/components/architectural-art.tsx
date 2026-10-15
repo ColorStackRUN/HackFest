@@ -1,3 +1,5 @@
+import type { CSSProperties } from "react";
+
 export function BrickMark() {
   return (
     <svg className="brand-mark" viewBox="0 0 32 32" aria-hidden="true">
@@ -27,6 +29,36 @@ export function CourseStack({ level }: { level: number }) {
         )),
       )}
     </svg>
+  );
+}
+
+type SkylineBrickStyle = CSSProperties & {
+  "--drift-x": string;
+  "--drift-y": string;
+  "--assembly-delay": string;
+};
+
+const skylineColumns = [2, 3, 4, 6, 6, 4, 3, 5, 7, 7, 5, 3, 4, 3];
+const skylineColumnOffsets = [0, 2, 5, 9, 15, 21, 25, 28, 33, 40, 47, 52, 55, 59];
+
+export function CursorSkyline() {
+  return (
+    <div className="cursor-skyline" aria-hidden="true">
+      {skylineColumns.flatMap((height, column) =>
+        Array.from({ length: height }, (_, row) => {
+          const index = skylineColumnOffsets[column] + row;
+          const style = {
+            gridColumn: column + 1,
+            gridRow: 7 - row,
+            "--drift-x": `${((column % 5) - 2) * 15}px`,
+            "--drift-y": `${24 + (row % 3) * 14}px`,
+            "--assembly-delay": `${(index % 7) * 18}ms`,
+          } as SkylineBrickStyle;
+
+          return <span className="skyline-brick" key={index} style={style} />;
+        }),
+      )}
+    </div>
   );
 }
 
