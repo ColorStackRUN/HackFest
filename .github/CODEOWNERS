@@ -1,0 +1,18 @@
+# Default reviewers for all repository changes.
+* @ColorStackRUN/maintainers @Jorgito-C
+
+# Governance and GitHub automation.
+/.github/CODEOWNERS @ColorStackRUN/maintainers
+/.github/pull_request_template.md @ColorStackRUN/maintainers
+/.github/workflows/** @ColorStackRUN/maintainers
+
+# Contributor and agent operating instructions.
+/AGENTS.md @ColorStackRUN/maintainers
+/README.md @ColorStackRUN/maintainers
+
+# Dependency, runtime, and deployment-sensitive configuration.
+/package.json @ColorStackRUN/maintainers
+/package-lock.json @ColorStackRUN/maintainers
+/next.config.ts @ColorStackRUN/maintainers
+/tsconfig.json @ColorStackRUN/maintainers
+/eslint.config.mjs @ColorStackRUN/maintainers
