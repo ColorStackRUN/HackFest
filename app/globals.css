@@ -1087,7 +1087,7 @@ details p {
   html *,
   html *::before,
   html *::after {
-    cursor: url("/brick-cursor.png") 2 1, auto !important;
+    cursor: url("/brick-cursor.png") 1 1, auto !important;
   }
 }
 
