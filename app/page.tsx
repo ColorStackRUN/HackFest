@@ -1,7 +1,12 @@
 import { event, faqs, navigation, schedule } from "../lib/event";
 import RegistrationForm from "./components/registration-form";
+import BrickCursor from "./components/brick-cursor";
 import BrickCity from "./components/brick-city";
-import { BrickMark, CourseStack } from "./components/architectural-art";
+import {
+  BrickMark,
+  CourseStack,
+  CursorSkyline,
+} from "./components/architectural-art";
 
 const expectations = [
   {
@@ -21,6 +26,7 @@ const expectations = [
 export default function Home() {
   return (
     <>
+      <BrickCursor />
       <a className="skip-link" href="#main">
         Skip to content
       </a>
@@ -61,6 +67,7 @@ export default function Home() {
               <span key={index} />
             ))}
           </div>
+          <CursorSkyline />
           <div className="container hero-layout">
             <div className="hero-copy">
               <p className="hero-kicker">NOVEMBER 6–8, 2026 · RUTGERS–NEWARK</p>

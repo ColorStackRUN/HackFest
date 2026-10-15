@@ -41,9 +41,10 @@ Use these rules for every public site change.
 - Use bold geometric framing, hard rectangular geometry, and visible borders.
 - Keep the brick grid as thin outlines with sparse Brick City Red fills. It must not become photo-real or childish.
 - The hero statically spells `HackFest` and `2026` in running-bond brick geometry. Keep this lockup legible against the Soot masonry field.
-- Floating outline bricks may add playful CSS-only motion, but event facts remain still and immediately readable.
+- Floating outline bricks provide CSS-only ambient motion. A cursor-reactive brick skyline may assemble near the pointer without moving event facts.
 - Schedule masonry is static decoration. Page content must not depend on JavaScript or animation to appear.
-- Desktop pointer devices may use the brick cursor. Touch devices and unsupported browsers must retain normal cursor behavior.
+- Precise pointer devices use a 22px pixel-art brick with its click point at the brick’s upper-left mortar edge. Interactive controls switch it to a brass hammer; primary clicks receive a short placement effect.
+- Touch and coarse-pointer devices use normal interactions with no custom cursor.
 - Use real RU-N student photography only if approved. No stock photography or generated campus scenes.
 
 ## Identity
@@ -79,6 +80,6 @@ Keep the event copy visually dominant beside the brick lockup. The hero is energ
 - Maintain visible keyboard focus with sufficient contrast on light, dark, and red surfaces.
 - Keep the skip link and logical heading hierarchy.
 - Interactive targets should remain at least 44px high where practical.
-- Essential content must remain available with JavaScript disabled.
-- Decorative artwork uses `aria-hidden`.
-- `prefers-reduced-motion: reduce` must disable smooth scrolling and transitions.
+- Essential content must remain available with JavaScript disabled; native cursor behavior is the fallback.
+- Decorative artwork and cursor feedback use `aria-hidden`.
+- `prefers-reduced-motion: reduce` must disable smooth scrolling, transitions, cursor placement feedback, and skyline assembly.
