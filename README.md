@@ -1,28 +1,36 @@
 # HackFest 2026 Website
 
-**Building Newark.** Students building tech that builds up the city.
-Hosted by GWC x CSRUN at Rutgers–Newark.
+A three-day, beginner-friendly hackathon at Rutgers–Newark, November 6–8, 2026.
+
+Hosted by Girls Who Code x ColorStack RU-N.
 
 ## Stack
 
-This is a [Next.js](https://nextjs.org/) App Router site. It is designed to deploy directly to Vercel and leaves room for event integrations such as a registration form and a venue map.
+This is a [Next.js](https://nextjs.org/) App Router site designed for deployment to Vercel. Public event facts are server-rendered; only the Typeform embed requires client-side JavaScript.
 
-```
+```text
 hackfest-website/
 ├── app/
-│   ├── layout.tsx       ← shared document layout and SEO metadata
-│   ├── page.tsx         ← homepage content
-│   ├── globals.css      ← layout and responsive styles
-│   └── tokens.css       ← brand colors, fonts, and spacing
-├── lib/event.ts         ← shared event facts, schedule, and FAQ
-├── DESIGN.md            ← design rules for anyone editing the site
-└── README.md            ← this file
+│   ├── components/
+│   │   ├── architectural-art.tsx  ← brick mark, schedule stacks, and skyline
+│   │   ├── brick-city.tsx         ← static decorative brick lettering
+│   │   └── registration-form.tsx  ← Typeform client component
+│   ├── globals.css                ← layout and responsive styles
+│   ├── layout.tsx                 ← shared document layout and metadata
+│   ├── opengraph-image.tsx        ← generated social image
+│   ├── page.tsx                   ← content-first homepage
+│   └── tokens.css                 ← brand colors and fonts
+├── lib/event.ts                   ← shared event facts, schedule, and FAQ
+├── DESIGN.md                      ← design rules for site changes
+└── README.md                      ← this file
 ```
 
 ## Run locally
 
+Use Node.js 20.9 or newer.
+
 ```bash
-npm install
+npm ci
 npm run dev
 ```
 
@@ -30,41 +38,44 @@ Then open [http://localhost:3000](http://localhost:3000).
 
 ## Making changes
 
-1. Check `DESIGN.md` before adding anything new.
-2. Update shared event facts, the preliminary schedule, and FAQs in `lib/event.ts`. Update section layout in `app/page.tsx`.
-3. Keep brand tokens in `app/tokens.css` and layout/component styling in `app/globals.css`.
-4. Test the production build before merging:
+1. Read `DESIGN.md` before changing presentation or voice.
+2. Update confirmed facts, the preliminary schedule, and FAQs in `lib/event.ts`.
+3. Update section structure in `app/page.tsx`, brand tokens in `app/tokens.css`, and layout styling in `app/globals.css`.
+4. Keep the decorative `HackFest 2026` brick lettering static and server-rendered. Event facts must remain readable outside its `aria-hidden` SVG.
+5. Do not submit a test registration to the live Typeform.
 
-   ```bash
-   npm run build
-   ```
+## Verification
 
-5. Commit with a short message that says what changed, e.g. `Add sponsor logos`.
+Run the repository contract before requesting review:
 
-## Motion and design
+```bash
+npm run lint
+npm run typecheck
+SITE_URL=http://127.0.0.1:3000 npm run build
+SITE_URL=http://127.0.0.1:3000 npm run start -- -H 127.0.0.1 -p 3000
+```
 
-The agreed product design is in `design-plan.md`; engineering review and constraints are in `design-review.md`.
-
-- `app/components/brick-city.tsx` builds mixed-case “HackFest” lettering with “2026” centered underneath. Adjacent glyph cells are joined into full-length bricks with staggered half-brick joints, thin outlines, signature-red fills, and a restrained 1.2-unit top/side edge. Brick runs stop at each glyph gap to preserve readability. CSS assembles the courses from bottom to top; the replay button remounts only the decorative SVG. Reduced-motion visitors receive the completed lettering.
-- `app/components/motion-enhancer.tsx` uses one IntersectionObserver for visible, one-time section entrances. All content is readable before it runs.
-- `app/components/architectural-art.tsx` contains the original line illustrations and schedule stacks.
-- `app/components/brick-transition.tsx` provides a brief, three-course outline-brick seam only when a section boundary crosses 55% of the viewport. A finite 690ms CSS animation clears automatically, with a 900ms retrigger cooldown. One passive scroll listener batches boundary reads into animation frames; focused iframe interaction and reduced motion suppress the effect. No full-screen curtain, scroll locking, or scroll-driven React renders.
-- Section entrances and rebuilds are finite. The hero lettering has a gentle 3px idle bob after assembly, a mouse-entry rebuild with a 2.3s retrigger cooldown, and explicit pause/resume and replay buttons. Pausing settles the lettering and suppresses hover rebuilds. Reduced motion disables animation and omits motion controls. No animation framework or 3D renderer is required. Registration and its frame stay stationary.
+With the production server running, check the homepage, responsive layouts, keyboard focus, metadata, and generated Open Graph image. Confirm the direct Typeform link remains available when JavaScript is disabled.
 
 ## Integrations
 
-- Use environment variables for any map API key; do not commit keys into the repository.
-- Registration uses the existing Typeform `kygPtOm3`, embedded through its official React library in `app/components/registration-form.tsx`. A direct link remains available above the form. Do not submit test registrations to the live form.
-- Venue addresses are still unconfirmed. Add exact locations and Google Maps directions once approved; a campus-wide map should not imply a confirmed check-in location.
-- Set `SITE_URL` to the final public URL for social-image links on non-Vercel hosting. On Vercel, the production/deployment URL environment variables provide the default automatically.
-- Dates, cost, eligibility, overnight policies, sponsor assets, and organizer contacts still need approval. The three-day schedule is explicitly preliminary.
+- Registration uses Typeform `kygPtOm3` through `app/components/registration-form.tsx`, with a direct fallback link to `https://form.typeform.com/to/kygPtOm3`.
+- Set `SITE_URL` to the public origin for correct absolute social-image URLs outside Vercel. Vercel deployment URL environment variables provide the default there.
+- Exact location and arrival details must remain unpublished until confirmed.
 
-## Before launch (TODO)
+## Launch checklist
 
-- [ ] Final event dates (see Marketing Tracker)
-- [ ] Final tagline (Open Decision, due before theme reveal)
-- [ ] Registration form link in the Register buttons
-- [ ] Real sponsor logos in `assets/images/`
-- [ ] Final logo lockup (HackFest 2026 wordmark, "GWC x CSRUN" underneath)
-- [ ] FAQ answers
-- [ ] Real student photos (no stock photos)
+Already present:
+
+- [x] November 6–8, 2026 dates
+- [x] Registration embed and direct link
+- [x] Preliminary three-day schedule
+- [x] Beginner welcome and FAQ
+
+Still unconfirmed:
+
+- [ ] Exact building, check-in entrance, and daily hours
+- [ ] Eligibility, cost, overnight policy, and registration deadline
+- [ ] Parking, transit, and accessibility details
+- [ ] Organizer contact channel
+- [ ] Sponsor assets and final logo lockup

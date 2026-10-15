@@ -1,8 +1,7 @@
 import { ImageResponse } from "next/og";
-import { event } from "../lib/event";
 
 export const alt =
-  "HackFest 2026 — Building Newark. A three-day hackathon at Rutgers–Newark.";
+  "HackFest 2026. A three-day hackathon at Rutgers–Newark, November 6–8, 2026.";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -22,9 +21,6 @@ export default function SocialImage() {
           borderBottom: "20px solid #A3302A",
         }}
       >
-        <div style={{ display: "flex", fontSize: 28, marginBottom: 40 }}>
-          {event.name} · GWC x CSRUN
-        </div>
         <div
           style={{
             display: "flex",
@@ -33,10 +29,10 @@ export default function SocialImage() {
             letterSpacing: -3,
           }}
         >
-          {event.theme}
+          HackFest 2026
         </div>
-        <div style={{ display: "flex", fontSize: 30, marginTop: 24 }}>
-          {event.tagline}
+        <div style={{ display: "flex", fontSize: 38, marginTop: 24 }}>
+          November 6–8, 2026
         </div>
         <div
           style={{
@@ -46,7 +42,7 @@ export default function SocialImage() {
             marginTop: 48,
           }}
         >
-          Three-day hackathon · {event.location} · No experience needed
+          Three-day hackathon · Rutgers–Newark · No experience needed
         </div>
       </div>
     ),

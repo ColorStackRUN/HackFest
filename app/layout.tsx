@@ -12,10 +12,10 @@ const siteUrl =
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: `${event.name} · ${event.theme}`,
+  title: "HackFest 2026 | November 6–8 at Rutgers–Newark",
   description: event.description,
   openGraph: {
-    title: `${event.name} · ${event.theme}`,
+    title: "HackFest 2026 | November 6–8 at Rutgers–Newark",
     description: event.description,
     type: "website",
     locale: "en_US",
