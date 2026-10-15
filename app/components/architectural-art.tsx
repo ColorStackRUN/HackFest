@@ -30,15 +30,3 @@ export function CourseStack({ level }: { level: number }) {
   );
 }
 
-export function Skyline() {
-  return (
-    <svg
-      className="skyline"
-      aria-hidden="true"
-      viewBox="0 0 1200 120"
-      preserveAspectRatio="none"
-    >
-      <path d="M0 120V90h60V60h40v30h30V40h20V20h10v20h20v50h40V70h60v50h20V30h12V10h8v20h12v90h40V50h50v40h30V65h45v55h25V25h10V5h6v20h10v95h40V80h70V55h30v65h35V45h45v75h30V75h55V35h15V15h8v20h12v85h40V60h60v60H0z" />
-    </svg>
-  );
-}

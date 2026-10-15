@@ -24,8 +24,8 @@ Use these rules for every public site change.
 | Passaic Blue | `#3B5B78` | Links and quiet accents | Limestone |
 
 - Favor Soot/Graphite and Limestone; use red as the primary accent, with blue and brass sparingly.
-- One dominant accent per section.
-- No gradients, glows, rounded product-card styling, or drop shadows.
+- Use gradients only for subtle masonry patterns and atmospheric color fields.
+- Offset shadows must remain hard-edged and poster-like. No glossy effects, glassmorphism, or generic product-card styling.
 
 ## Type
 
@@ -38,12 +38,13 @@ Use these rules for every public site change.
 
 ## Geometry and artwork
 
-- Use hard rectangular geometry, thin borders, and square controls.
-- Keep the brick grid as thin outlines with sparse Brick City Red fills. It must not become photo-real or cartoony.
-- The hero artwork statically spells `HackFest` and `2026` in running-bond brick geometry. It is decorative and `aria-hidden`; never put essential event information only inside it.
-- Retain one flat skyline silhouette at the bottom of the hero as location-oriented decoration.
+- Use bold geometric framing, hard rectangular geometry, and visible borders.
+- Keep the brick grid as thin outlines with sparse Brick City Red fills. It must not become photo-real or childish.
+- The hero statically spells `HackFest` and `2026` in running-bond brick geometry. Keep this lockup legible against the Soot masonry field.
+- Floating outline bricks may add playful CSS-only motion, but event facts remain still and immediately readable.
 - Schedule masonry is static decoration. Page content must not depend on JavaScript or animation to appear.
-- Use real RU-N student photography only if approved. No stock photography.
+- Desktop pointer devices may use the brick cursor. Touch devices and unsupported browsers must retain normal cursor behavior.
+- Use real RU-N student photography only if approved. No stock photography or generated campus scenes.
 
 ## Identity
 
@@ -60,22 +61,24 @@ The first viewport must present:
 - `Rutgers–Newark`
 - the beginner-friendly description and `No experience needed`
 - one primary `Register for HackFest` action
-- the static brick lettering and restrained skyline decoration
+- the static brick lettering and playful masonry field
 
-Keep the desktop `h1` at `clamp(3.5rem, 6vw, 6rem)` and the mobile override at `clamp(2.8rem, 12vw, 4.5rem)`. The hero is event information, not a campaign statement.
+Keep the event copy visually dominant beside the brick lockup. The hero is energetic and playful without introducing a separate campaign theme.
 
 ## Layout and interaction
 
-- Keep the sticky Soot header, desktop and mobile section navigation, and prominent registration action.
-- Keep the content width and responsive 24–64px gutters defined in `app/globals.css`.
+- Keep the sticky Soot header, framed desktop navigation, mobile section navigation, and prominent registration action.
+- Keep responsive 24–64px gutters and strong section-to-section color changes.
+- Use hard offset shadows, label stamps, masonry lines, and occasional rotated bricks as the site’s graphic vocabulary.
 - Stack the hero, overview steps, schedule, FAQ, and registration introduction at the documented mobile breakpoint.
 - Keep Typeform and all ancestors stationary. Always retain its accessible iframe title and direct fallback link.
 - Use native anchors and native `<details>/<summary>` FAQ behavior.
 
 ## Accessibility and motion
 
-- Maintain visible keyboard focus with sufficient contrast on light and dark surfaces.
+- Maintain visible keyboard focus with sufficient contrast on light, dark, and red surfaces.
 - Keep the skip link and logical heading hierarchy.
 - Interactive targets should remain at least 44px high where practical.
 - Essential content must remain available with JavaScript disabled.
+- Decorative artwork uses `aria-hidden`.
 - `prefers-reduced-motion: reduce` must disable smooth scrolling and transitions.

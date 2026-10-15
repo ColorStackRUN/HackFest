@@ -12,7 +12,7 @@ This is a [Next.js](https://nextjs.org/) App Router site designed for deployment
 hackfest-website/
 ├── app/
 │   ├── components/
-│   │   ├── architectural-art.tsx  ← brick mark, schedule stacks, and skyline
+│   │   ├── architectural-art.tsx  ← brick mark and schedule stacks
 │   │   ├── brick-city.tsx         ← static decorative brick lettering
 │   │   └── registration-form.tsx  ← Typeform client component
 │   ├── globals.css                ← layout and responsive styles
@@ -20,6 +20,8 @@ hackfest-website/
 │   ├── opengraph-image.tsx        ← generated social image
 │   ├── page.tsx                   ← content-first homepage
 │   └── tokens.css                 ← brand colors and fonts
+├── public/
+│   └── brick-cursor.svg       ← desktop brick cursor
 ├── lib/event.ts                   ← shared event facts, schedule, and FAQ
 ├── DESIGN.md                      ← design rules for site changes
 └── README.md                      ← this file
@@ -41,7 +43,7 @@ Then open [http://localhost:3000](http://localhost:3000).
 1. Read `DESIGN.md` before changing presentation or voice.
 2. Update confirmed facts, the preliminary schedule, and FAQs in `lib/event.ts`.
 3. Update section structure in `app/page.tsx`, brand tokens in `app/tokens.css`, and layout styling in `app/globals.css`.
-4. Keep the decorative `HackFest 2026` brick lettering static and server-rendered. Event facts must remain readable outside its `aria-hidden` SVG.
+4. Keep the decorative `HackFest 2026` brick lettering static in the server output and optional motion CSS-only. Event facts must remain readable without decorative artwork.
 5. Do not submit a test registration to the live Typeform.
 
 ## Verification

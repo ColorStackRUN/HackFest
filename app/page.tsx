@@ -1,7 +1,7 @@
 import { event, faqs, navigation, schedule } from "../lib/event";
 import RegistrationForm from "./components/registration-form";
 import BrickCity from "./components/brick-city";
-import { BrickMark, CourseStack, Skyline } from "./components/architectural-art";
+import { BrickMark, CourseStack } from "./components/architectural-art";
 
 const expectations = [
   {
@@ -56,10 +56,17 @@ export default function Home() {
 
       <main id="main" tabIndex={-1}>
         <section className="hero" id="top" aria-labelledby="hero-heading">
+          <div className="hero-brick-field" aria-hidden="true">
+            {Array.from({ length: 12 }, (_, index) => (
+              <span key={index} />
+            ))}
+          </div>
           <div className="container hero-layout">
             <div className="hero-copy">
               <p className="hero-kicker">NOVEMBER 6–8, 2026 · RUTGERS–NEWARK</p>
-              <h1 id="hero-heading">HackFest 2026</h1>
+              <h1 id="hero-heading">
+                HackFest <span>2026</span>
+              </h1>
               <p className="lede">{event.description}</p>
               <div className="hero-actions">
                 <a className="btn btn-primary" href="#register">
@@ -67,10 +74,14 @@ export default function Home() {
                   <span className="button-arrow" aria-hidden="true">↗</span>
                 </a>
               </div>
+              <p className="hero-hosts">Girls Who Code × ColorStack RU-N</p>
             </div>
-            <BrickCity />
+            <div className="hero-lockup" aria-hidden="true">
+              <span className="lockup-note">THREE DAYS · ONE WEEKEND</span>
+              <BrickCity />
+            </div>
           </div>
-          <div className="container">
+          <div className="container hero-facts-wrap">
             <dl className="event-facts">
               <div>
                 <dt>Dates</dt>
@@ -86,17 +97,19 @@ export default function Home() {
               </div>
             </dl>
           </div>
-          <Skyline />
         </section>
 
         <section
-          className="section section-light"
+          className="section section-light overview-section"
           id="overview"
           aria-labelledby="overview-heading"
         >
           <div className="container">
+            <span className="section-label">01 / YOUR WEEKEND</span>
             <div className="section-intro">
-              <h2 id="overview-heading">What to expect</h2>
+              <h2 id="overview-heading">
+                What to <span className="accent">expect</span>
+              </h2>
               <p className="intro-copy">
                 HackFest is a three-day student hackathon hosted by Girls Who
                 Code x ColorStack RU-N. Come on your own or with teammates and
@@ -112,29 +125,37 @@ export default function Home() {
               ))}
             </ol>
             <aside className="event-status" aria-labelledby="status-heading">
-              <h3 id="status-heading">Location and event details</h3>
-              <p className="event-location">
-                {event.location} · {event.city}
-              </p>
-              <p>
-                The exact building, daily hours, eligibility, cost, overnight
-                policy, parking, transit, and accessibility details are still
-                being finalized. We’ll post confirmed information here.
-              </p>
+              <span className="status-mark" aria-hidden="true">
+                i
+              </span>
+              <div>
+                <h3 id="status-heading">Location and event details</h3>
+                <p className="event-location">
+                  {event.location} · {event.city}
+                </p>
+                <p>
+                  The exact building, daily hours, eligibility, cost, overnight
+                  policy, parking, transit, and accessibility details are still
+                  being finalized. We’ll post confirmed information here.
+                </p>
+              </div>
             </aside>
           </div>
         </section>
 
         <section
-          className="section section-dark"
+          className="section section-dark schedule-section"
           id="schedule"
           aria-labelledby="schedule-heading"
         >
           <div className="container">
+            <span className="section-label">02 / FRIDAY → SUNDAY</span>
             <div className="section-intro">
-              <h2 id="schedule-heading">Three-day schedule</h2>
+              <h2 id="schedule-heading">
+                Three-day <span className="accent">schedule</span>
+              </h2>
               <div className="intro-copy">
-                <span className="schedule-status">Preliminary</span>
+                <span className="schedule-status">● Preliminary</span>
                 <p>
                   Session times and attendance details will be added when
                   confirmed.
@@ -144,13 +165,17 @@ export default function Home() {
             <div className="schedule-grid">
               {schedule.map(({ day, date, title, items }, index) => (
                 <article className="day-card" key={day}>
-                  <div className="day-node" aria-hidden="true">0{index + 1}</div>
+                  <div className="day-node" aria-hidden="true">
+                    0{index + 1}
+                  </div>
                   <CourseStack level={index + 1} />
                   <span className="when">{day}</span>
                   <p className="schedule-date">{date}</p>
                   <h3>{title}</h3>
                   <ul>
-                    {items.map((item) => <li key={item}>{item}</li>)}
+                    {items.map((item) => (
+                      <li key={item}>{item}</li>
+                    ))}
                   </ul>
                 </article>
               ))}
@@ -163,19 +188,29 @@ export default function Home() {
           id="faq"
           aria-labelledby="faq-heading"
         >
-          <div className="container faq-layout">
-            <h2 id="faq-heading">Frequently asked questions</h2>
-            <div className="faq-list">
-              {faqs.map(({ question, answer }, index) => (
-                <details key={question}>
-                  <summary>
-                    <span className="faq-number" aria-hidden="true">0{index + 1}</span>
-                    <span>{question}</span>
-                    <span className="faq-plus" aria-hidden="true" />
-                  </summary>
-                  <p>{answer}</p>
-                </details>
-              ))}
+          <div className="container">
+            <span className="section-label">03 / ASK AWAY</span>
+            <div className="faq-layout">
+              <div className="faq-heading-wrap">
+                <h2 id="faq-heading">
+                  Frequently asked <span className="accent">questions</span>
+                </h2>
+                <p>Everything confirmed so far, in one place.</p>
+              </div>
+              <div className="faq-list">
+                {faqs.map(({ question, answer }, index) => (
+                  <details key={question}>
+                    <summary>
+                      <span className="faq-number" aria-hidden="true">
+                        0{index + 1}
+                      </span>
+                      <span>{question}</span>
+                      <span className="faq-plus" aria-hidden="true" />
+                    </summary>
+                    <p>{answer}</p>
+                  </details>
+                ))}
+              </div>
             </div>
           </div>
         </section>
@@ -186,19 +221,29 @@ export default function Home() {
           aria-labelledby="register-heading"
         >
           <div className="container">
+            <span className="section-label">04 / SAVE YOUR SPOT</span>
             <div className="registration-intro">
-              <h2 id="register-heading">Register for HackFest</h2>
+              <h2 id="register-heading">
+                Register for <span className="accent">HackFest</span>
+              </h2>
               <div className="intro-copy">
                 <p>Use the form below to register for HackFest 2026.</p>
                 <p className="registration-fallback">
-                  <a href={event.registrationUrl} target="_blank" rel="noopener noreferrer">
+                  <a
+                    href={event.registrationUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     Open registration form in a new tab ↗
                   </a>
                 </p>
               </div>
             </div>
             <div className="registration-frame">
-              <div className="form-frame-label">HACKFEST 2026 / REGISTRATION</div>
+              <div className="form-frame-label">
+                <span>HACKFEST 2026 / REGISTRATION</span>
+                <span aria-hidden="true">● LIVE FORM</span>
+              </div>
               <RegistrationForm />
             </div>
             <p className="form-note">
@@ -210,10 +255,17 @@ export default function Home() {
       </main>
 
       <footer className="site-footer">
+        <div className="container footer-banner" aria-hidden="true">
+          HACKFEST
+        </div>
         <div className="container footer-inner">
           <p>HackFest 2026 · Girls Who Code x ColorStack RU-N · Rutgers–Newark</p>
           <div className="footer-links">
-            <a href={event.registrationUrl} target="_blank" rel="noopener noreferrer">
+            <a
+              href={event.registrationUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Registration ↗
             </a>
             <a href="#top">Back to top ↑</a>
