@@ -43,7 +43,7 @@ Use these rules for every public site change.
 - The hero statically spells `HackFest` and `2026` in running-bond brick geometry. Keep this lockup legible against the Soot masonry field.
 - Floating outline bricks provide CSS-only ambient motion. A cursor-reactive brick skyline may assemble near the pointer without moving event facts.
 - Schedule masonry is static decoration. Page content must not depend on JavaScript or animation to appear.
-- Precise pointer devices use a 22px pixel-art brick as the cursor, with the click point at the brick’s upper-left corner. Primary clicks receive a short placement effect.
+- Precise pointer devices use the clay brick image as the cursor, with the click point at the brick’s front lower corner. Primary clicks receive a short placement effect.
 - Touch and coarse-pointer devices keep the native cursor.
 - Use real RU-N student photography only if approved. No stock photography or generated campus scenes.
 
