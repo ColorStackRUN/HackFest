@@ -1,41 +1,26 @@
 import { event, faqs, navigation, schedule } from "../lib/event";
 import RegistrationForm from "./components/registration-form";
 import BrickCity from "./components/brick-city";
-import MotionEnhancer from "./components/motion-enhancer";
-import BrickTransition from "./components/brick-transition";
-import {
-  BrickMark,
-  CardArt,
-  CourseStack,
-  Skyline,
-} from "./components/architectural-art";
+import { BrickMark, CourseStack, Skyline } from "./components/architectural-art";
 
-const features = [
+const expectations = [
   {
-    variant: "city",
-    label: "build",
-    title: "Start with your city",
-    copy: "Think about a Newark problem you care about. Work with your team to explore an answer and build a prototype.",
+    title: "Meet your team",
+    copy: "Come with teammates or join team formation on Friday.",
   },
   {
-    variant: "code",
-    label: "learn",
-    title: "Learn by doing",
-    copy: "Workshops and mentors help you move from an idea to something you can show. No experience needed.",
+    title: "Learn and create",
+    copy: "Workshops and mentors will help you move from an idea to a project.",
   },
   {
-    variant: "people",
-    label: "meet",
-    title: "Find your people",
-    copy: "Meet other students, form a team, and share what you learn. You don’t have to arrive with everything figured out.",
+    title: "Share your work",
+    copy: "Present your project at the end of the weekend.",
   },
 ] as const;
 
 export default function Home() {
   return (
     <>
-      <MotionEnhancer />
-      <BrickTransition />
       <a className="skip-link" href="#main">
         Skip to content
       </a>
@@ -56,10 +41,7 @@ export default function Home() {
             ))}
           </nav>
           <a className="btn btn-primary header-register" href="#register">
-            Register{" "}
-            <span className="button-arrow" aria-hidden="true">
-              ↗
-            </span>
+            Register <span className="button-arrow" aria-hidden="true">↗</span>
           </a>
         </div>
         <nav className="mobile-nav container" aria-label="Mobile sections">
@@ -68,221 +50,126 @@ export default function Home() {
               {label}
             </a>
           ))}
+          <a href="#register">Register</a>
         </nav>
       </header>
+
       <main id="main" tabIndex={-1}>
         <section className="hero" id="top" aria-labelledby="hero-heading">
           <div className="container hero-layout">
             <div className="hero-copy">
-              <div className="hero-kicker">
-                <span className="status-square" aria-hidden="true" /> STUDENT
-                BUILT. CITY INSPIRED.
-              </div>
-              <h1 id="hero-heading">
-                Building
-                <br />
-                <span className="accent">Newark.</span>
-              </h1>
-              <p className="hero-tagline">{event.tagline}</p>
+              <p className="hero-kicker">NOVEMBER 6–8, 2026 · RUTGERS–NEWARK</p>
+              <h1 id="hero-heading">HackFest 2026</h1>
               <p className="lede">{event.description}</p>
               <div className="hero-actions">
                 <a className="btn btn-primary" href="#register">
-                  Register for HackFest{" "}
-                  <span className="button-arrow" aria-hidden="true">
-                    ↗
-                  </span>
-                </a>
-                <a className="text-link" href="#about">
-                  Explore the event <span aria-hidden="true">↓</span>
+                  Register for HackFest
+                  <span className="button-arrow" aria-hidden="true">↗</span>
                 </a>
               </div>
-              <p className="date">
-                {event.datesLabel} <span aria-hidden="true">/</span> 2026
-              </p>
             </div>
             <BrickCity />
           </div>
           <div className="container">
             <dl className="event-facts">
               <div>
-                <dt>01 / The experience</dt>
-                <dd>
-                  Three days.<small>Meet. Make. Share.</small>
-                </dd>
+                <dt>Dates</dt>
+                <dd>{event.datesLabel}</dd>
               </div>
               <div>
-                <dt>02 / Our home</dt>
-                <dd>
-                  {event.location}
-                  <small>Building with your city.</small>
-                </dd>
+                <dt>Location</dt>
+                <dd>{event.location}</dd>
               </div>
               <div>
-                <dt>03 / Your starting point</dt>
-                <dd>
-                  Everyone builds.<small>No experience needed.</small>
-                </dd>
+                <dt>Experience</dt>
+                <dd>No experience needed</dd>
               </div>
             </dl>
           </div>
           <Skyline />
         </section>
+
         <section
           className="section section-light"
-          id="about"
-          aria-labelledby="about-heading"
+          id="overview"
+          aria-labelledby="overview-heading"
         >
           <div className="container">
-            <div className="section-intro" data-reveal>
-              <div>
-                <span className="label">{"// 01 / your first brick"}</span>
-                <h2 id="about-heading">
-                  You belong
-                  <br />
-                  <span className="accent">here.</span>
-                </h2>
-              </div>
-              <div className="intro-copy">
-                <p>
-                  HackFest brings students together to build tech that helps
-                  Newark. Come solo or bring a team. First hackathon? Good.
-                  We&apos;ll get you set up.
-                </p>
-                <p>
-                  A hackathon is a chance to turn an idea into a prototype with
-                  other people. You learn as you go, try things out, and share
-                  what you made.
-                </p>
-                <p className="organizer-line">
-                  Girls Who Code x ColorStack RU-N
-                </p>
-              </div>
+            <div className="section-intro">
+              <h2 id="overview-heading">What to expect</h2>
+              <p className="intro-copy">
+                HackFest is a three-day student hackathon hosted by Girls Who
+                Code x ColorStack RU-N. Come on your own or with teammates and
+                turn an idea into a project with support along the way.
+              </p>
             </div>
-            <div className="grid-3 feature-grid" data-reveal>
-              {features.map(({ variant, label, title, copy }, index) => (
-                <article className="card" key={variant}>
-                  <div className="card-top">
-                    <span className="card-number" aria-hidden="true">
-                      0{index + 1}
-                    </span>
-                    <span className="label">{`// ${label}`}</span>
-                  </div>
-                  <CardArt variant={variant} />
+            <ol className="expect-list">
+              {expectations.map(({ title, copy }) => (
+                <li key={title}>
                   <h3>{title}</h3>
                   <p>{copy}</p>
-                </article>
+                </li>
               ))}
-            </div>
+            </ol>
+            <aside className="event-status" aria-labelledby="status-heading">
+              <h3 id="status-heading">Location and event details</h3>
+              <p className="event-location">
+                {event.location} · {event.city}
+              </p>
+              <p>
+                The exact building, daily hours, eligibility, cost, overnight
+                policy, parking, transit, and accessibility details are still
+                being finalized. We’ll post confirmed information here.
+              </p>
+            </aside>
           </div>
         </section>
+
         <section
           className="section section-dark"
           id="schedule"
           aria-labelledby="schedule-heading"
         >
           <div className="container">
-            <div className="section-intro" data-reveal>
-              <div>
-                <span className="label">{"// 02 / the build"}</span>
-                <h2 id="schedule-heading">
-                  Three days.
-                  <br />
-                  One <span className="accent">community.</span>
-                </h2>
-              </div>
+            <div className="section-intro">
+              <h2 id="schedule-heading">Three-day schedule</h2>
               <div className="intro-copy">
-                <span className="schedule-status">Preliminary schedule</span>
+                <span className="schedule-status">Preliminary</span>
                 <p>
-                  A first look at the event. Dates, times, and daily attendance
-                  details will be announced here.
+                  Session times and attendance details will be added when
+                  confirmed.
                 </p>
               </div>
             </div>
-            <div className="grid-3 schedule-grid" data-reveal>
-              {schedule.map(({ day, title, items }, index) => (
+            <div className="schedule-grid">
+              {schedule.map(({ day, date, title, items }, index) => (
                 <article className="day-card" key={day}>
-                  <div className="day-node" aria-hidden="true">
-                    0{index + 1}
-                  </div>
+                  <div className="day-node" aria-hidden="true">0{index + 1}</div>
                   <CourseStack level={index + 1} />
                   <span className="when">{day}</span>
+                  <p className="schedule-date">{date}</p>
                   <h3>{title}</h3>
                   <ul>
-                    {items.map((item) => (
-                      <li key={item}>{item}</li>
-                    ))}
+                    {items.map((item) => <li key={item}>{item}</li>)}
                   </ul>
                 </article>
               ))}
             </div>
           </div>
         </section>
-        <section
-          className="section section-light"
-          id="venue"
-          aria-labelledby="venue-heading"
-        >
-          <div className="container venue-layout">
-            <div data-reveal>
-              <span className="label">{"// 03 / our home base"}</span>
-              <h2 id="venue-heading">
-                Built in
-                <br />
-                Brick <span className="accent">City.</span>
-              </h2>
-              <p className="measure">
-                {event.location} is our home base. Exact venue locations and
-                arrival instructions are coming soon.
-              </p>
-            </div>
-            <aside
-              className="info-panel"
-              aria-label="Venue details"
-              data-reveal
-            >
-              <div className="venue-card-top">
-                <span className="label">newark, new jersey</span>
-                <span aria-hidden="true">↗</span>
-              </div>
-              <Skyline venue />
-              <h3>See you at Rutgers–Newark.</h3>
-              <p>
-                Building addresses, check-in entrances, transit and parking
-                information, and accessibility details will be shared here once
-                confirmed.
-              </p>
-              <div className="venue-status">
-                <span className="status-square" aria-hidden="true" /> Venue
-                details coming soon
-              </div>
-              <p className="small-copy">
-                Check back before making travel plans.
-              </p>
-            </aside>
-          </div>
-        </section>
+
         <section
           className="section section-light faq-section"
           id="faq"
           aria-labelledby="faq-heading"
         >
           <div className="container faq-layout">
-            <div data-reveal>
-              <span className="label">{"// 04 / good questions"}</span>
-              <h2 id="faq-heading">
-                Before you
-                <br />
-                <span className="accent">build.</span>
-              </h2>
-              <p>First hackathon? Start here.</p>
-            </div>
+            <h2 id="faq-heading">Frequently asked questions</h2>
             <div className="faq-list">
               {faqs.map(({ question, answer }, index) => (
                 <details key={question}>
                   <summary>
-                    <span className="faq-number" aria-hidden="true">
-                      0{index + 1}
-                    </span>
+                    <span className="faq-number" aria-hidden="true">0{index + 1}</span>
                     <span>{question}</span>
                     <span className="faq-plus" aria-hidden="true" />
                   </summary>
@@ -292,6 +179,7 @@ export default function Home() {
             </div>
           </div>
         </section>
+
         <section
           className="section register-section"
           id="register"
@@ -299,70 +187,36 @@ export default function Home() {
         >
           <div className="container">
             <div className="registration-intro">
-              <div>
-                <span className="label">{"// 05 / add your brick"}</span>
-                <h2 id="register-heading">
-                  Your idea.
-                  <br />
-                  Your city.
-                  <br />
-                  Your <span className="accent">start.</span>
-                </h2>
-              </div>
+              <h2 id="register-heading">Register for HackFest</h2>
               <div className="intro-copy">
-                <p>
-                  Build something for your city. Start with the HackFest
-                  registration form below.
-                </p>
+                <p>Use the form below to register for HackFest 2026.</p>
                 <p className="registration-fallback">
-                  <a
-                    href={event.registrationUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
+                  <a href={event.registrationUrl} target="_blank" rel="noopener noreferrer">
                     Open registration form in a new tab ↗
                   </a>
                 </p>
-                <BrickMark />
               </div>
             </div>
             <div className="registration-frame">
-              <div className="form-frame-label">
-                <span>HACKFEST / REGISTRATION</span>
-                <span aria-hidden="true">01 — LET’S BUILD</span>
-              </div>
+              <div className="form-frame-label">HACKFEST 2026 / REGISTRATION</div>
               <RegistrationForm />
             </div>
             <p className="form-note">
-              Registration is hosted by Typeform. If the embedded form
-              doesn&apos;t load, use the link above.
+              Registration is hosted by Typeform. If the embedded form doesn’t
+              load, use the link above.
             </p>
           </div>
         </section>
       </main>
+
       <footer className="site-footer">
-        <div className="container">
-          <div className="footer-head">
-            <span className="footer-wordmark">Everyone builds.</span>
-            <BrickMark />
-          </div>
-          <div className="footer-inner">
-            <div>
-              <p>
-                {event.name} · GWC x CSRUN · {event.location}
-              </p>
-              <p>#HackFest2026 #BuildingNewark</p>
-            </div>
-            <div className="footer-links">
-              <a
-                href={event.registrationUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Registration ↗
-              </a>
-              <a href="#top">Back to top ↑</a>
-            </div>
+        <div className="container footer-inner">
+          <p>HackFest 2026 · Girls Who Code x ColorStack RU-N · Rutgers–Newark</p>
+          <div className="footer-links">
+            <a href={event.registrationUrl} target="_blank" rel="noopener noreferrer">
+              Registration ↗
+            </a>
+            <a href="#top">Back to top ↑</a>
           </div>
         </div>
       </footer>

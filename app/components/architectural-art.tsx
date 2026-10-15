@@ -11,39 +11,6 @@ export function BrickMark() {
   );
 }
 
-export function CardArt({ variant }: { variant: "city" | "code" | "people" }) {
-  return (
-    <svg
-      className="card-art"
-      viewBox="0 0 160 100"
-      aria-hidden="true"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.5"
-    >
-      {variant === "city" ? (
-        <>
-          <path d="M16 82h128M30 82V46h24v36M66 82V20h26v62M104 82V36h24v46M74 20V10h10v10" />
-          <path
-            d="M74 30h10v10H74zM74 48h10v10H74zM38 54h8v12h-8z"
-            className="art-accent"
-          />
-        </>
-      ) : variant === "code" ? (
-        <>
-          <path d="m54 20-32 30 32 30m52-60 32 30-32 30M92 12 68 88" />
-          <path d="M73 43h15v15H73z" className="art-accent" />
-        </>
-      ) : (
-        <>
-          <path d="M22 60h30v22H22zM65 60h30v22H65zM108 60h30v22h-30zM37 60V44h86v16M80 44V28" />
-          <path d="M68 12h24v16H68z" className="art-accent" />
-        </>
-      )}
-    </svg>
-  );
-}
-
 export function CourseStack({ level }: { level: number }) {
   return (
     <svg className="course-stack" viewBox="0 0 150 78" aria-hidden="true">
@@ -56,7 +23,6 @@ export function CourseStack({ level }: { level: number }) {
             y={56 - row * 23}
             width="38"
             height="18"
-            style={{ animationDelay: `${row * 90 + column * 30}ms` }}
           />
         )),
       )}
@@ -64,10 +30,10 @@ export function CourseStack({ level }: { level: number }) {
   );
 }
 
-export function Skyline({ venue = false }: { venue?: boolean }) {
+export function Skyline() {
   return (
     <svg
-      className={venue ? "venue-skyline" : "skyline"}
+      className="skyline"
       aria-hidden="true"
       viewBox="0 0 1200 120"
       preserveAspectRatio="none"
