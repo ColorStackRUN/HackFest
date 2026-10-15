@@ -1,16 +1,9 @@
 "use client";
 
-import { useEffect, useRef } from "react";
-
-const INTERACTIVE_SELECTOR = "a, button, summary, [role='button']";
+import { useEffect } from "react";
 
 export default function BrickCursor() {
-  const cursorRef = useRef<HTMLDivElement>(null);
-
   useEffect(() => {
-    const cursor = cursorRef.current;
-    if (!cursor) return;
-
     const finePointer = window.matchMedia("(pointer: fine)");
     const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
     const hero = document.querySelector<HTMLElement>(".hero");
@@ -47,7 +40,6 @@ export default function BrickCursor() {
     function renderPointer() {
       frame = 0;
       if (layoutDirty) measureSkyline();
-      cursor!.style.transform = `translate3d(${pointerX}px, ${pointerY}px, 0)`;
 
       if (
         reducedMotion.matches ||
@@ -77,34 +69,19 @@ export default function BrickCursor() {
 
     function handlePointerMove(event: PointerEvent) {
       if (!finePointer.matches) return;
-      if (
-        event.target instanceof HTMLIFrameElement
-      ) {
-        hideCursor();
-        return;
-      }
       pointerX = event.clientX;
       pointerY = event.clientY;
       pointerSeen = true;
-      cursor!.dataset.variant =
-        event.target instanceof Element &&
-        event.target.closest(INTERACTIVE_SELECTOR)
-          ? "hammer"
-          : "brick";
-      cursor!.dataset.visible = "true";
       schedulePointer();
     }
 
     function placeBrick(event: PointerEvent) {
-      if (
-        !finePointer.matches ||
-        reducedMotion.matches ||
-        event.button !== 0
-      )
-        return;
+      if (!finePointer.matches || reducedMotion.matches || event.button !== 0) return;
+      if (event.target instanceof HTMLIFrameElement) return;
 
       const placement = document.createElement("span");
       placement.className = "brick-placement";
+      placement.setAttribute("aria-hidden", "true");
       placement.style.left = `${event.clientX}px`;
       placement.style.top = `${event.clientY}px`;
       document.body.append(placement);
@@ -113,60 +90,27 @@ export default function BrickCursor() {
       });
     }
 
-    function hideCursor() {
-      cursor!.dataset.visible = "false";
-      clearSkyline();
-    }
-
-    function configurePointer() {
-      document.documentElement.classList.toggle(
-        "has-pixel-cursor",
-        finePointer.matches,
-      );
-      if (!finePointer.matches) hideCursor();
-      layoutDirty = true;
-    }
-
     function invalidateMeasurements() {
       layoutDirty = true;
       if (pointerSeen) schedulePointer();
     }
 
-    configurePointer();
     window.addEventListener("pointermove", handlePointerMove, { passive: true });
     window.addEventListener("pointerdown", placeBrick, { passive: true });
     window.addEventListener("resize", invalidateMeasurements, { passive: true });
     window.addEventListener("scroll", invalidateMeasurements, { passive: true });
-    window.addEventListener("blur", hideCursor);
-    document.documentElement.addEventListener("mouseleave", hideCursor);
-    finePointer.addEventListener("change", configurePointer);
     reducedMotion.addEventListener("change", clearSkyline);
 
     return () => {
       cancelAnimationFrame(frame);
-      document.documentElement.classList.remove("has-pixel-cursor");
       window.removeEventListener("pointermove", handlePointerMove);
       window.removeEventListener("pointerdown", placeBrick);
       window.removeEventListener("resize", invalidateMeasurements);
       window.removeEventListener("scroll", invalidateMeasurements);
-      window.removeEventListener("blur", hideCursor);
-      document.documentElement.removeEventListener("mouseleave", hideCursor);
-      finePointer.removeEventListener("change", configurePointer);
       reducedMotion.removeEventListener("change", clearSkyline);
       clearSkyline();
     };
   }, []);
 
-  return (
-    <div
-      className="pixel-cursor"
-      data-variant="brick"
-      data-visible="false"
-      ref={cursorRef}
-      aria-hidden="true"
-    >
-      <span className="pixel-cursor__brick" />
-      <span className="pixel-cursor__hammer" />
-    </div>
-  );
+  return null;
 }
