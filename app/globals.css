@@ -1084,8 +1084,10 @@ details p {
 
 @media (pointer: fine) {
   html,
-  html * {
-    cursor: url("/brick-cursor.png") 3 0, auto;
+  html *,
+  html *::before,
+  html *::after {
+    cursor: url("/brick-cursor.png") 1 1, auto !important;
   }
 }
 
