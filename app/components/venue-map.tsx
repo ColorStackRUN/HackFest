@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import type { Map as MapLibreMap, Marker } from "maplibre-gl";
 import "maplibre-gl/dist/maplibre-gl.css";
-import { venueDirections, venues } from "../../lib/event";
+import { venueDirections, venues, venueWalkingPath } from "../../lib/event";
 
 const styleUrl = "https://tiles.openfreemap.org/styles/dark";
 
@@ -17,6 +17,7 @@ function fitBoth(map: MapLibreMap, maplibregl: typeof import("maplibre-gl")) {
   for (const venue of venues) {
     bounds.extend([venue.longitude, venue.latitude]);
   }
+  for (const coordinate of venueWalkingPath) bounds.extend(coordinate);
   map.fitBounds(bounds, {
     padding: { top: 72, right: 72, bottom: 72, left: 72 },
     maxZoom: 16,
@@ -79,6 +80,35 @@ export default function VenueMap() {
         for (const [layer, property, value] of paint) {
           if (map.getLayer(layer)) setPaint(layer, property, value);
         }
+
+        map.addSource("venue-walking-path", {
+          type: "geojson",
+          data: {
+            type: "Feature",
+            properties: {},
+            geometry: {
+              type: "LineString",
+              coordinates: venueWalkingPath,
+            },
+          },
+        });
+        const firstLabel = map.getStyle().layers.find(
+          (layer) => layer.type === "symbol",
+        )?.id;
+        map.addLayer(
+          {
+            id: "venue-walking-path",
+            type: "line",
+            source: "venue-walking-path",
+            layout: { "line-cap": "round", "line-join": "round" },
+            paint: { "line-color": "#ed684e", "line-width": 4 },
+          },
+          firstLabel,
+        );
+        map.getCanvas().setAttribute(
+          "aria-label",
+          "Campus map with a walking path from Rutgers iHub (01) to the Paul Robeson Campus Center (02)",
+        );
 
         const created = venues.map((venue, index) => {
           const pin = document.createElement("button");
