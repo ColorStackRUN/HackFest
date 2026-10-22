@@ -151,7 +151,25 @@ export const faqs = [
   {
     question: "When and where is HackFest?",
     answer:
-      "HackFest runs November 6–8, 2026 at Rutgers–Newark. Check in at the Rutgers iHub, 123 Washington Street. The rest of the weekend is in the Essex Room at the Paul Robeson Campus Center, 350 Dr. Martin Luther King Jr. Blvd. Daily hours and parking are still being confirmed.",
+      "HackFest runs November 6–8, 2026 at Rutgers–Newark. Check in at the Rutgers iHub, 123 Washington Street. The rest of the weekend is in the Essex Room at the Paul Robeson Campus Center, 350 Dr. Martin Luther King Jr. Blvd. Daily hours are still being confirmed.",
+  },
+  {
+    question: "Where can I park?",
+    answer:
+      "You can pay for street parking near campus; check the posted street signs for payment hours and parking restrictions. Street parking is free on Sundays. You can also pay $5 for Rutgers visitor parking and park in Lot 508.",
+    link: {
+      label: "View Lot 508 on the Rutgers map",
+      href: "https://maps.rutgers.edu/map#/?google2019Available=true&imageryLabels=true&lat=40.739885&lng=-74.177011&selected=30003&sidebar=true&underConstructionState=true&zoom=19",
+    },
+  },
+  {
+    question: "How do I register for Rutgers visitor parking?",
+    answer:
+      "Register before you arrive. Choose Visitors, select Daily parking, enter your arrival and departure times, and choose the Newark campus. Add your vehicle information and complete payment. Follow the step-by-step guide for the full registration process.",
+    link: {
+      label: "Visitor parking registration guide",
+      href: "https://scribehow.com/o/yvsCo89GTEWsRvT0b8S2Xw/viewer/Visitor_Parking__Selecting_a_Date_Time_and_Campus_to_book_Visitor_Parking__uNdlZ8ZqS3e9eRNGUOo5qQ",
+    },
   },
   {
     question: "What are the prizes?",
