@@ -38,8 +38,8 @@ export const venues = [
     address: "350 Dr. Martin Luther King Jr. Blvd",
     city: "Newark, NJ 07102",
     note: "Come here after check-in.",
-    latitude: 40.7419398,
-    longitude: -74.1762112,
+    latitude: 40.74233244122659,
+    longitude: -74.17592093028567,
   },
 ] as const;
 
