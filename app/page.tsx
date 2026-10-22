@@ -1,5 +1,7 @@
-import { event, faqs, navigation, schedule } from "../lib/event";
+import { event, faqs, lastYear, navigation, schedule } from "../lib/event";
 import RegistrationForm from "./components/registration-form";
+import VenueMap from "./components/venue-map";
+import RegistrationCountdown from "./components/registration-countdown";
 import BrickCursor from "./components/brick-cursor";
 import BrickCity from "./components/brick-city";
 import {
@@ -83,9 +85,15 @@ export default function Home() {
               </div>
               <p className="hero-hosts">Girls Who Code × ColorStack RU-N</p>
             </div>
-            <div className="hero-lockup" aria-hidden="true">
-              <span className="lockup-note">THREE DAYS · ONE WEEKEND</span>
-              <BrickCity />
+            <div className="hero-aside">
+              <div className="hero-lockup" aria-hidden="true">
+                <span className="lockup-note">THREE DAYS · ONE WEEKEND</span>
+                <BrickCity />
+              </div>
+              <RegistrationCountdown
+                closesAt={event.registrationClosesAt}
+                closesLabel={event.registrationClosesLabel}
+              />
             </div>
           </div>
           <div className="container hero-facts-wrap">
@@ -120,8 +128,32 @@ export default function Home() {
               <p className="intro-copy">
                 HackFest is a three-day student hackathon hosted by Girls Who
                 Code x ColorStack RU-N. Come on your own or with teammates and
-                turn an idea into a project with support along the way.
+                turn an idea into a project with support along the way. Prizes
+                include $3,500 in cash, swag, tech giveaways, and career
+                opportunities.
               </p>
+            </div>
+            <div className="last-year">
+              <figure>
+                <img
+                  src="/hackfest-2025-check-in.jpg"
+                  alt="Students checking in together at HackFest 2025, beside a HackFest ’25 poster."
+                  width={1600}
+                  height={933}
+                />
+                <figcaption>Check-in at HackFest 2025</figcaption>
+              </figure>
+              <div className="last-year-copy">
+                <p className="facts-kicker">From HackFest 2025</p>
+                <dl className="event-facts last-year-facts">
+                  {lastYear.map(([value, label]) => (
+                    <div key={label}>
+                      <dt>{label}</dt>
+                      <dd>{value}</dd>
+                    </div>
+                  ))}
+                </dl>
+              </div>
             </div>
             <ol className="expect-list">
               {expectations.map(({ title, copy }) => (
@@ -136,17 +168,38 @@ export default function Home() {
                 i
               </span>
               <div>
-                <h3 id="status-heading">Location and event details</h3>
+                <h3 id="status-heading">Still being confirmed</h3>
                 <p className="event-location">
                   {event.location} · {event.city}
                 </p>
                 <p>
-                  The exact building, daily hours, eligibility, cost, overnight
-                  policy, parking, transit, and accessibility details are still
-                  being finalized. We’ll post confirmed information here.
+                  Daily hours, parking, transit, eligibility, cost, and the
+                  overnight policy are still being finalized. The buildings are
+                  on the map below.
                 </p>
               </div>
             </aside>
+          </div>
+        </section>
+
+        <section
+          className="section section-light where-section"
+          id="where"
+          aria-labelledby="where-heading"
+        >
+          <div className="container">
+            <span className="section-label">02 / WHERE TO GO</span>
+            <div className="section-intro">
+              <h2 id="where-heading">
+                Two <span className="accent">stops</span>
+              </h2>
+              <p className="intro-copy">
+                Check in at the Rutgers iHub. The rest of HackFest is in the
+                Essex Room at the Paul Robeson Campus Center, a short walk
+                across campus.
+              </p>
+            </div>
+            <VenueMap />
           </div>
         </section>
 
@@ -156,7 +209,7 @@ export default function Home() {
           aria-labelledby="schedule-heading"
         >
           <div className="container">
-            <span className="section-label">02 / FRIDAY → SUNDAY</span>
+            <span className="section-label">03 / FRIDAY → SUNDAY</span>
             <div className="section-intro">
               <h2 id="schedule-heading">
                 Three-day <span className="accent">schedule</span>
@@ -196,7 +249,7 @@ export default function Home() {
           aria-labelledby="faq-heading"
         >
           <div className="container">
-            <span className="section-label">03 / ASK AWAY</span>
+            <span className="section-label">04 / ASK AWAY</span>
             <div className="faq-layout">
               <div className="faq-heading-wrap">
                 <h2 id="faq-heading">
@@ -228,13 +281,20 @@ export default function Home() {
           aria-labelledby="register-heading"
         >
           <div className="container">
-            <span className="section-label">04 / SAVE YOUR SPOT</span>
+            <span className="section-label">05 / SAVE YOUR SPOT</span>
             <div className="registration-intro">
               <h2 id="register-heading">
                 Register for <span className="accent">HackFest</span>
               </h2>
               <div className="intro-copy">
-                <p>Use the form below to register for HackFest 2026.</p>
+                <p>
+                  Use the form below to register for HackFest 2026. Registration
+                  closes {event.registrationClosesLabel}.
+                </p>
+                <p>
+                  After you submit, we’ll reach out ahead of the event with the
+                  run of show and other details you need before you arrive.
+                </p>
                 <p className="registration-fallback">
                   <a
                     href={event.registrationUrl}

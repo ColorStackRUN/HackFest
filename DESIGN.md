@@ -62,6 +62,7 @@ The first viewport must present:
 - `Rutgers–Newark`
 - the beginner-friendly description and `No experience needed`
 - one primary `Register for HackFest` action
+- the registration close date, November 3, 2026, with a countdown that can tick beside it. The date itself must stay readable with JavaScript disabled.
 - the static brick lettering and playful masonry field
 
 Keep the event copy visually dominant beside the brick lockup. The hero is energetic and playful without introducing a separate campaign theme.

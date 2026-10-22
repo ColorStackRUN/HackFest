@@ -384,6 +384,81 @@ p {
   font-size: 1.05rem;
 }
 
+.hero-aside {
+  display: grid;
+  align-content: end;
+  justify-items: end;
+  gap: 18px;
+}
+
+.registration-countdown {
+  width: min(100%, 500px);
+  margin: 0;
+  padding: 14px 16px 16px;
+  border: 1px solid rgb(243 241 236 / 30%);
+  background: var(--graphite);
+  box-shadow: 8px 8px 0 var(--oxblood);
+}
+
+.countdown-label {
+  margin: 0 0 0.75rem;
+  padding-bottom: 0.45rem;
+  border-bottom: 1px solid rgb(243 241 236 / 20%);
+  color: var(--brass);
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-align: right;
+  text-transform: uppercase;
+}
+
+.countdown-clock {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.countdown-slot {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.35rem;
+}
+
+.countdown-unit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 3.1rem;
+}
+
+.countdown-unit strong {
+  color: var(--limestone);
+  font-family: var(--font-display);
+  font-size: clamp(1.7rem, 3vw, 2.4rem);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.04em;
+  line-height: 1;
+}
+
+.countdown-unit small {
+  margin-top: 0.35rem;
+  color: var(--steel);
+  font-family: var(--font-mono);
+  font-size: 0.58rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.countdown-colon {
+  color: var(--brass);
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 2.6vw, 2.1rem);
+  font-weight: 700;
+  line-height: 0.9;
+}
+
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
@@ -524,6 +599,77 @@ p {
   color: var(--limestone);
   font-family: var(--font-display);
   font-size: 1.08rem;
+}
+
+.facts-kicker {
+  margin: 0 0 0.55rem;
+  color: var(--brass);
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.last-year {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(240px, 0.7fr);
+  gap: 28px;
+  align-items: stretch;
+  margin-top: 56px;
+}
+
+.last-year figure {
+  margin: 0;
+}
+
+.last-year img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 2px solid var(--soot);
+  box-shadow: 8px 8px 0 var(--oxblood);
+}
+
+.last-year figcaption {
+  margin: 12px 0 0;
+  color: var(--soot);
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.last-year-copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: 2px solid var(--soot);
+  padding: 8px 22px 12px;
+  background: var(--soot);
+  box-shadow: 8px 8px 0 var(--brick-red);
+}
+
+.last-year-facts {
+  grid-template-columns: 1fr;
+  margin: 0;
+  border: 0;
+  background: transparent;
+}
+
+.last-year-facts div {
+  padding: 16px 2px;
+  border-top: 1px solid rgb(243 241 236 / 22%);
+  border-left: 0;
+}
+
+.last-year-facts div:first-child {
+  border-top: 0;
+}
+
+.last-year-facts dd {
+  font-size: 1.7rem;
 }
 
 .section {
@@ -671,6 +817,220 @@ p {
   border: 2px solid var(--passaic);
   padding: 26px;
   background: #e8edf2;
+}
+
+.where-section {
+  padding-top: clamp(72px, 8vw, 110px);
+}
+
+.venue-layout {
+  display: grid;
+  grid-template-columns: minmax(280px, 0.82fr) minmax(0, 1.35fr);
+  gap: 22px;
+  align-items: stretch;
+  margin-top: 48px;
+}
+
+.venue-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.venue-card {
+  display: grid;
+  gap: 12px;
+  border: 2px solid var(--soot);
+  padding: 18px;
+  background: #fffdf8;
+  box-shadow: 8px 8px 0 var(--brick-red);
+}
+
+.venue-card:nth-child(2) {
+  box-shadow: 8px 8px 0 var(--brass);
+}
+
+.venue-card.is-active {
+  background: var(--soot);
+  color: var(--limestone);
+}
+
+.venue-card button {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 14px;
+  align-items: start;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  font: inherit;
+  text-align: left;
+}
+
+.venue-step {
+  color: var(--brick-red);
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  line-height: 1;
+}
+
+.venue-card.is-active .venue-step,
+.venue-card.is-active .venue-role {
+  color: var(--brass);
+}
+
+.venue-role,
+.venue-note {
+  display: block;
+}
+
+.venue-role {
+  margin-bottom: 0.35rem;
+  color: var(--oxblood);
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.venue-name {
+  display: block;
+  margin-bottom: 0.35rem;
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+}
+
+.venue-address,
+.venue-note {
+  color: var(--graphite);
+  font-size: 0.92rem;
+  line-height: 1.45;
+}
+
+.venue-card.is-active .venue-address,
+.venue-card.is-active .venue-note {
+  color: var(--limestone);
+}
+
+.venue-note {
+  margin-top: 0.45rem;
+}
+
+.venue-directions {
+  justify-self: start;
+  min-height: 44px;
+  padding: 0.65rem 0;
+  color: var(--passaic);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  line-height: 44px;
+  text-transform: uppercase;
+}
+
+.venue-card.is-active .venue-directions {
+  color: var(--brass);
+}
+
+.venue-map {
+  position: relative;
+  min-height: 520px;
+  overflow: hidden;
+  border: 2px solid var(--soot);
+  background: var(--soot);
+  box-shadow: 8px 8px 0 var(--oxblood);
+}
+
+.venue-map-canvas,
+.venue-map-canvas .maplibregl-map {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.venue-map-fallback {
+  position: relative;
+  z-index: 1;
+  max-width: 28ch;
+  margin: 0;
+  padding: 28px;
+  color: var(--limestone);
+}
+
+.venue-map .maplibregl-ctrl-group {
+  overflow: hidden;
+  border: 2px solid var(--limestone);
+  border-radius: 0;
+  background: var(--soot);
+  box-shadow: 4px 4px 0 var(--brick-red);
+}
+
+.venue-map .maplibregl-ctrl-group button {
+  width: 36px;
+  height: 36px;
+  background-color: var(--soot);
+}
+
+.venue-map .maplibregl-ctrl-group button + button {
+  border-top: 1px solid rgb(243 241 236 / 28%);
+}
+
+.venue-map .maplibregl-ctrl-group button span {
+  filter: invert(1);
+}
+
+.venue-map .maplibregl-ctrl-attrib {
+  background: rgb(20 20 22 / 82%);
+  color: var(--limestone);
+  font-family: var(--font-mono);
+  font-size: 10px;
+}
+
+.venue-map .maplibregl-ctrl-attrib a {
+  color: var(--limestone);
+}
+
+.venue-map .maplibregl-cooperative-gesture-screen {
+  align-items: center;
+  background: rgb(20 20 22 / 78%);
+  color: var(--limestone);
+  font-family: var(--font-body);
+}
+
+.map-pin {
+  display: grid;
+  width: 42px;
+  height: 42px;
+  place-items: center;
+  border: 2px solid var(--limestone);
+  background: var(--brick-red);
+  box-shadow: 4px 4px 0 var(--oxblood);
+  color: var(--limestone);
+  cursor: pointer;
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+}
+
+.map-pin.is-weekend {
+  background: var(--brass);
+  box-shadow: 4px 4px 0 var(--oxblood);
+  color: var(--soot);
+}
+
+.map-pin.is-active {
+  outline: 3px solid var(--limestone);
+  outline-offset: 3px;
 }
 
 .status-mark {
@@ -1204,11 +1564,26 @@ details p {
     margin: 0;
   }
 
+  .hero-aside {
+    justify-items: stretch;
+  }
+
+  .registration-countdown {
+    width: min(100%, 480px);
+    justify-self: end;
+  }
+
   .section-intro,
   .registration-intro,
-  .faq-layout {
+  .faq-layout,
+  .last-year,
+  .venue-layout {
     grid-template-columns: 1fr;
     gap: 30px;
+  }
+
+  .venue-map {
+    min-height: 420px;
   }
 
   .faq-heading-wrap {
