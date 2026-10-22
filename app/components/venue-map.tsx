@@ -45,7 +45,7 @@ export default function VenueMap() {
       if (cancelled || !canvas) return;
 
       maplibregl.setWorkerUrl(
-        new URL("/api/maplibre-worker.cjs", window.location.origin).href,
+        new URL("/api/maplibre-worker.mjs", window.location.origin).href,
       );
 
       map = new maplibregl.Map({
