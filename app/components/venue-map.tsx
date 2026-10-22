@@ -97,11 +97,21 @@ export default function VenueMap() {
         )?.id;
         map.addLayer(
           {
+            id: "venue-walking-path-outline",
+            type: "line",
+            source: "venue-walking-path",
+            layout: { "line-cap": "round", "line-join": "round" },
+            paint: { "line-color": "#174ea6", "line-width": 9 },
+          },
+          firstLabel,
+        );
+        map.addLayer(
+          {
             id: "venue-walking-path",
             type: "line",
             source: "venue-walking-path",
             layout: { "line-cap": "round", "line-join": "round" },
-            paint: { "line-color": "#ed684e", "line-width": 4 },
+            paint: { "line-color": "#669dff", "line-width": 6 },
           },
           firstLabel,
         );
