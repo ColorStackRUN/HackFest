@@ -27,8 +27,8 @@ export const venues = [
     address: "123 Washington Street",
     city: "Newark, NJ 07102",
     note: "Start here when you arrive.",
-    latitude: 40.7405287,
-    longitude: -74.1731701,
+    latitude: 40.7403093,
+    longitude: -74.1726026,
   },
   {
     id: "essex",
