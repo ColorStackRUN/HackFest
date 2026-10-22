@@ -6,12 +6,51 @@ export const event = {
   city: "Newark, New Jersey",
   registrationUrl: "https://form.typeform.com/to/kygPtOm3",
   typeformId: "kygPtOm3",
+  registrationClosesAt: "2026-11-03T23:59:59-05:00",
+  registrationClosesLabel: "November 3, 2026",
   description:
     "A three-day, beginner-friendly hackathon at Rutgers–Newark. Meet a team, learn new skills, and create a project together. No experience needed.",
 };
 
+export const lastYear = [
+  ["150+", "Students"],
+  ["13+", "Universities"],
+  ["$3,500", "Cash prizes"],
+] as const;
+
+export const venues = [
+  {
+    id: "ihub",
+    step: "01",
+    role: "Check-in",
+    name: "Rutgers iHub",
+    address: "123 Washington Street",
+    city: "Newark, NJ 07102",
+    note: "Start here when you arrive.",
+    latitude: 40.7405287,
+    longitude: -74.1731701,
+  },
+  {
+    id: "essex",
+    step: "02",
+    role: "The rest of the weekend",
+    name: "Essex Room, Paul Robeson Campus Center",
+    address: "350 Dr. Martin Luther King Jr. Blvd",
+    city: "Newark, NJ 07102",
+    note: "Come here after check-in.",
+    latitude: 40.7413244,
+    longitude: -74.1768739,
+  },
+] as const;
+
+export function venueDirections(address: string, city: string) {
+  const destination = encodeURIComponent(`${address}, ${city}`);
+  return `https://www.google.com/maps/dir/?api=1&destination=${destination}`;
+}
+
 export const navigation = [
   ["overview", "Overview"],
+  ["where", "Where"],
   ["schedule", "Schedule"],
   ["faq", "FAQ"],
 ] as const;
@@ -64,10 +103,20 @@ export const faqs = [
   {
     question: "When and where is HackFest?",
     answer:
-      "HackFest runs November 6–8, 2026 at Rutgers–Newark in Newark, New Jersey. Exact building and arrival details are coming soon.",
+      "HackFest runs November 6–8, 2026 at Rutgers–Newark. Check in at the Rutgers iHub, 123 Washington Street. The rest of the weekend is in the Essex Room at the Paul Robeson Campus Center, 350 Dr. Martin Luther King Jr. Blvd. Daily hours and parking are still being confirmed.",
+  },
+  {
+    question: "What are the prizes?",
+    answer:
+      "$3,500 in cash prizes, plus swag, tech giveaways, and career opportunities.",
   },
   {
     question: "How do I register?",
     answer: "Use the form on this page or open the Typeform in a new tab.",
+  },
+  {
+    question: "What happens after I register?",
+    answer:
+      "We’ll reach out ahead of the event with the run of show and other details you need before you arrive.",
   },
 ];
