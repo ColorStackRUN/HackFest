@@ -163,6 +163,15 @@ export const faqs = [
     },
   },
   {
+    question: "How do I register for Rutgers visitor parking?",
+    answer:
+      "Register before you arrive. Choose Visitors, select Daily parking, enter your arrival and departure times, and choose the Newark campus. Add your vehicle information and complete payment. Follow the step-by-step guide for the full registration process.",
+    link: {
+      label: "Visitor parking registration guide",
+      href: "https://scribehow.com/o/yvsCo89GTEWsRvT0b8S2Xw/viewer/Visitor_Parking__Selecting_a_Date_Time_and_Campus_to_book_Visitor_Parking__uNdlZ8ZqS3e9eRNGUOo5qQ",
+    },
+  },
+  {
     question: "What are the prizes?",
     answer:
       "$3,500 in cash prizes, plus swag, tech giveaways, and career opportunities.",
