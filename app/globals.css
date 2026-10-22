@@ -1010,21 +1010,22 @@ p {
 
 .map-pin {
   display: grid;
-  width: 42px;
-  height: 42px;
+  width: 21px;
+  height: 21px;
+  padding: 0;
   place-items: center;
-  border: 2px solid var(--limestone);
+  border: 1px solid var(--limestone);
   background: var(--brick-red);
-  box-shadow: 4px 4px 0 var(--oxblood);
+  box-shadow: 2px 2px 0 var(--oxblood);
   color: var(--limestone);
   cursor: pointer;
   font-family: var(--font-display);
-  font-size: 0.95rem;
+  font-size: 0.65rem;
 }
 
 .map-pin.is-weekend {
   background: var(--brass);
-  box-shadow: 4px 4px 0 var(--oxblood);
+  box-shadow: 2px 2px 0 var(--oxblood);
   color: var(--soot);
 }
 
