@@ -151,7 +151,16 @@ export const faqs = [
   {
     question: "When and where is HackFest?",
     answer:
-      "HackFest runs November 6–8, 2026 at Rutgers–Newark. Check in at the Rutgers iHub, 123 Washington Street. The rest of the weekend is in the Essex Room at the Paul Robeson Campus Center, 350 Dr. Martin Luther King Jr. Blvd. Daily hours and parking are still being confirmed.",
+      "HackFest runs November 6–8, 2026 at Rutgers–Newark. Check in at the Rutgers iHub, 123 Washington Street. The rest of the weekend is in the Essex Room at the Paul Robeson Campus Center, 350 Dr. Martin Luther King Jr. Blvd. Daily hours are still being confirmed.",
+  },
+  {
+    question: "Where can I park?",
+    answer:
+      "You can pay for street parking near campus; check the posted street signs for payment hours and parking restrictions. Street parking is free on Sundays. You can also pay $5 for Rutgers visitor parking and park in Lot 508.",
+    link: {
+      label: "View Lot 508 on the Rutgers map",
+      href: "https://maps.rutgers.edu/map#/?google2019Available=true&imageryLabels=true&lat=40.739885&lng=-74.177011&selected=30003&sidebar=true&underConstructionState=true&zoom=19",
+    },
   },
   {
     question: "What are the prizes?",

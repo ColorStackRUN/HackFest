@@ -173,7 +173,7 @@ export default function Home() {
                   {event.location} · {event.city}
                 </p>
                 <p>
-                  Daily hours, parking, transit, eligibility, cost, and the
+                  Daily hours, transit, eligibility, cost, and the
                   overnight policy are still being finalized. The buildings are
                   on the map below.
                 </p>
@@ -258,7 +258,7 @@ export default function Home() {
                 <p>Everything confirmed so far, in one place.</p>
               </div>
               <div className="faq-list">
-                {faqs.map(({ question, answer }, index) => (
+                {faqs.map(({ question, answer, link }, index) => (
                   <details key={question}>
                     <summary>
                       <span className="faq-number" aria-hidden="true">
@@ -267,7 +267,22 @@ export default function Home() {
                       <span>{question}</span>
                       <span className="faq-plus" aria-hidden="true" />
                     </summary>
-                    <p>{answer}</p>
+                    <p>
+                      {answer}
+                      {link ? (
+                        <>
+                          {" "}
+                          <a
+                            href={link.href}
+                            target="_blank"
+                            rel="noreferrer"
+                          >
+                            {link.label}
+                          </a>
+                          .
+                        </>
+                      ) : null}
+                    </p>
                   </details>
                 ))}
               </div>
