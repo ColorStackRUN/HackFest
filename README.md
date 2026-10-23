@@ -54,8 +54,8 @@ Run the repository contract before requesting review:
 ```bash
 npm run lint
 npm run typecheck
-SITE_URL=http://127.0.0.1:3000 npm run build
-SITE_URL=http://127.0.0.1:3000 npm run start -- -H 127.0.0.1 -p 3000
+npm run build
+npm run start -- -H 127.0.0.1 -p 3000
 ```
 
 With the production server running, check the homepage, responsive layouts, keyboard focus, metadata, and generated Open Graph image. Confirm the direct Typeform link remains available when JavaScript is disabled.
@@ -63,7 +63,8 @@ With the production server running, check the homepage, responsive layouts, keyb
 ## Integrations
 
 - Registration uses Typeform `kygPtOm3` through `app/components/registration-form.tsx`, with a direct fallback link to `https://form.typeform.com/to/kygPtOm3`.
-- Set `SITE_URL` to the public origin for correct absolute social-image URLs outside Vercel. Vercel deployment URL environment variables provide the default there.
+- `lib/site.ts` defines `https://www.hackfest.run` as the public origin for canonical links, social images, robots.txt, and sitemap.xml, including in preview builds.
+- To set up Google Search Console, add a Domain property for `hackfest.run` and verify it with Google's TXT record in Vercel DNS. After verification and deployment, submit `https://www.hackfest.run/sitemap.xml` and request indexing for `https://www.hackfest.run/` with URL Inspection. Keep the verification TXT record after verification.
 - Exact location and arrival details must remain unpublished until confirmed.
 
 ## Launch checklist
