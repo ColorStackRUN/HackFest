@@ -5,21 +5,21 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: "HackFest 2026 | November 6–8 at Rutgers–Newark",
+  title: "HackFest is moving to spring | Rutgers–Newark",
   description: event.description,
   alternates: {
     canonical: "/",
   },
   openGraph: {
     url: siteUrl,
-    title: "HackFest 2026 | November 6–8 at Rutgers–Newark",
+    title: "HackFest is moving to spring | Rutgers–Newark",
     description: event.description,
     type: "website",
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
-    title: event.name,
+    title: "HackFest is moving to spring | Rutgers–Newark",
     description: event.description,
   },
 };

@@ -9,7 +9,7 @@ export const event = {
   registrationClosesAt: "2026-11-03T23:59:59-05:00",
   registrationClosesLabel: "November 3, 2026",
   description:
-    "A three-day, beginner-friendly hackathon at Rutgers–Newark. Meet a team, learn new skills, and create a project together. No experience needed.",
+    "HackFest at Rutgers–Newark is moving to the spring semester. New date and details to come. Already registered? Check your inbox, and follow @hackfest2026 for updates.",
 };
 
 export const lastYear = [
