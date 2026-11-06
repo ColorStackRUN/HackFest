@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
 export const alt =
-  "HackFest 2026. A three-day hackathon at Rutgers–Newark, November 6–8, 2026.";
+  "HackFest is moving to spring. New date and details to come. Rutgers–Newark.";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -29,10 +29,10 @@ export default function SocialImage() {
             letterSpacing: -3,
           }}
         >
-          HackFest 2026
+          HackFest
         </div>
         <div style={{ display: "flex", fontSize: 38, marginTop: 24 }}>
-          November 6–8, 2026
+          We’re moving to spring.
         </div>
         <div
           style={{
@@ -42,7 +42,7 @@ export default function SocialImage() {
             marginTop: 48,
           }}
         >
-          Three-day hackathon · Rutgers–Newark · No experience needed
+          New date and details to come · Rutgers–Newark
         </div>
       </div>
     ),

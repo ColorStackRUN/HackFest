@@ -1783,3 +1783,149 @@ details p {
     transform: none !important;
   }
 }
+
+/* Temporary announcement while spring event details are being confirmed. */
+.announcement-page {
+  min-height: 100svh;
+  background:
+    linear-gradient(90deg, rgb(243 241 236 / 3%) 1px, transparent 1px),
+    linear-gradient(rgb(243 241 236 / 3%) 1px, transparent 1px),
+    var(--soot);
+  background-size: 56px 28px;
+  color: var(--limestone);
+}
+
+.announcement-page :focus-visible {
+  outline-color: var(--brass);
+}
+
+.announcement-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  min-height: 100px;
+}
+
+.announcement-label {
+  margin-bottom: 12px;
+  color: var(--brass);
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.announcement-header > .announcement-label {
+  margin: 0;
+}
+
+.announcement-main {
+  max-width: 1000px;
+  padding-top: clamp(36px, 6vw, 80px);
+  padding-bottom: clamp(48px, 6vw, 80px);
+}
+
+.announcement h1 {
+  max-width: 13ch;
+  margin-bottom: 32px;
+  font-size: clamp(3.3rem, 8vw, 6.5rem);
+  text-wrap: balance;
+}
+
+.announcement h1 span {
+  color: #ef6a60;
+  font-family: var(--font-accent);
+  font-style: italic;
+  font-weight: 400;
+}
+
+.announcement-copy {
+  max-width: 64ch;
+  color: #d6d5d2;
+  font-size: clamp(1rem, 2vw, 1.125rem);
+}
+
+.announcement-date {
+  margin-top: 20px;
+  color: var(--limestone);
+  font-weight: 600;
+}
+
+.registrant-note {
+  margin: 36px 0;
+  padding: clamp(24px, 4vw, 36px);
+  border: 1px solid rgb(243 241 236 / 20%);
+  border-left: 4px solid var(--brass);
+  background: var(--graphite);
+}
+
+.registrant-note h2 {
+  margin-bottom: 16px;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+}
+
+.registrant-note > p:last-child {
+  max-width: 66ch;
+  margin-bottom: 0;
+  color: #d6d5d2;
+}
+
+.announcement-updates > p {
+  max-width: 55ch;
+  color: #d6d5d2;
+}
+
+.announcement-updates .btn {
+  margin-top: 8px;
+}
+
+.announcement-thanks {
+  margin: 32px 0 0;
+  color: #d6d5d2;
+  font-size: 0.9rem;
+}
+
+.announcement-footer {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding-top: 28px;
+  padding-bottom: 32px;
+  border-top: 1px solid rgb(243 241 236 / 16%);
+}
+
+.announcement-footer .brand-mark {
+  color: #ef6a60;
+}
+
+.announcement-footer p {
+  margin: 0;
+  font-size: 0.8rem;
+}
+
+.announcement-footer p span {
+  display: block;
+  color: #d6d5d2;
+}
+
+@media (max-width: 560px) {
+  .announcement-header {
+    min-height: 80px;
+  }
+
+  .announcement-header > .announcement-label {
+    max-width: 10ch;
+    text-align: right;
+  }
+
+  .announcement-updates .btn {
+    width: 100%;
+    gap: 0.65rem;
+    padding-right: 16px;
+    padding-left: 16px;
+    font-size: 0.85rem;
+  }
+}
